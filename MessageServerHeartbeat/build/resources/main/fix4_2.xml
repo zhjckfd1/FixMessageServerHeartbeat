@@ -1,0 +1,63 @@
+<fix major="4" minor="2">
+    <messages>
+        <message name="ExecutionReport" msgtype="8">
+            <field tag="8" type="java.lang.String" name="BeginString" required="true"/>
+            <field tag="9" type="java.lang.String" name="BodyLength" required="true"/>   <!-- type=Length -->
+            <field tag="35" type="java.lang.String" name="MsgType" required="true"/>
+
+            <field tag="11" type="java.lang.String" name="ClOrdID" required="true"/>
+            <field tag="41" type="java.lang.String" name="OrigClOrdID" required="false"/>
+            <field tag="583" type="java.lang.Integer" name="ClOrdLinkID" required="false"/>
+
+            <field tag="10" type="java.lang.String" name="CheckSum" required="true"/>
+        </message>
+
+        <message name="NewOrderSingle" msgtype="D">
+            <field tag="8" type="java.lang.String" name="BeginString" required="true"/>
+            <field tag="9" type="java.lang.String" name="BodyLength" required="true"/>
+            <field tag="35" type="java.lang.String" name="MsgType" required="true"/>
+
+            <field tag="60" type="java.time.LocalDateTime" name="TransactTime" required="true"/>
+            <field tag="11" type="java.lang.String" name="ClOrdID" required="true"/>
+            <field tag="583" type="java.lang.Integer" name="ClOrdLinkID" required="false"/>
+
+            <field tag="10" type="java.lang.String" name="CheckSum" required="true"/>
+        </message>
+
+        <message name="Reject" msgtype="3">
+            <field tag="8" type="java.lang.String" name="BeginString" required="true"/>
+            <field tag="9" type="java.lang.String" name="BodyLength" required="true"/>
+            <field tag="35" type="java.lang.String" name="MsgType" required="true"/>
+
+            <!--
+            <field tag="45" type="java.lang.String" name="RefSeqNum" required="true"/>
+            <field tag="371" type="java.lang.Integer" name="RefTagID" required="false"/>
+            <field tag="372" type="java.lang.String" name="RefMsgType" required="false"/>
+            <field tag="373" type="java.lang.Integer" name="SessionRejectReason" required="false"/>
+            -->
+            <field tag="58" type="java.lang.String" name="Text" required="false"/>
+
+            <field tag="10" type="java.lang.String" name="CheckSum" required="true"/>  <!--  all fields  -->
+        </message>
+
+        <message name="Heartbeat" msgtype="0">
+            <field tag="8" type="java.lang.String" name="BeginString" required="true"/>
+            <field tag="9" type="java.lang.String" name="BodyLength" required="true"/>
+            <field tag="35" type="java.lang.String" name="MsgType" required="true"/>
+
+            <field tag="112" type="java.lang.String" name="TestReqID" required="false"/>
+
+            <field tag="10" type="java.lang.String" name="CheckSum" required="true"/>  <!--  all fields  -->
+        </message>
+
+        <message name="TestRequest" msgtype="1">
+            <field tag="8" type="java.lang.String" name="BeginString" required="true"/>
+            <field tag="9" type="java.lang.String" name="BodyLength" required="true"/>
+            <field tag="35" type="java.lang.String" name="MsgType" required="true"/>
+
+            <field tag="112" type="java.lang.String" name="TestReqID" required="true"/>
+
+            <field tag="10" type="java.lang.String" name="CheckSum" required="true"/>  <!--  all fields  -->
+        </message>
+    </messages>
+</fix>
